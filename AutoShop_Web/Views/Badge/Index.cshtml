@@ -1,0 +1,29 @@
+﻿@model List<Badge>
+
+<div class="row">
+    <ul class="list-group" role="tablist">
+        @foreach (Badge item in Model)
+        {
+            <li class="list-group-item mt-2 bg-dark d-flex b-300 ">
+                <div class="row text-white">
+                    <div class="col-3">
+                        <h4>@item.Title</h4>
+                        <img class="w-badge" src="~/images/badges/@item.Picture" />
+                    </div>
+                    <div class="col-9">
+                        <h4>@item.Label</h4>
+
+                        <div>
+                            @item.Description
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </li>
+
+        }
+    </ul>
+</div>

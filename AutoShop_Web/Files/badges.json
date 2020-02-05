@@ -1,0 +1,26 @@
+[
+  {
+    "id": "badge1",
+    "partitionKey": "Badges",
+    "title": "Newbie",
+    "label": "Toute 1ère fois",
+    "description": "Vous avez acheté votre 1er article",
+    "picture": "237-512.png"
+  },
+  {
+    "id": "badge2",
+    "partitionKey": "Badges",
+    "title": "Liquide bambie",
+    "label": "1ère boisson",
+    "description": "Vous avez acheté votre 1ère boisson",
+    "picture": "237-512.png"
+  },
+  {
+    "id": "badge3",
+    "partitionKey": "Badges",
+    "title": "Master",
+    "label": "Fidèle mensuel",
+    "description": "Vous avez acheté plus de 10 articles par mois",
+    "picture": "237-512.png"
+  }
+]

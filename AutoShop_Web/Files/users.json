@@ -1,0 +1,37 @@
+[
+  {
+    "id": "40423B7A-B573-49B2-90E5-B0B1D34C0CAF",
+    "email": "fred@aisense.fr",
+    "lastName": "Wickert",
+    "firstName": "Fred",
+    "photo": "user1.jpg",
+    "level": 40,
+    "experience": 150000,
+    "badge": {
+      "title": "Le bibliotèquaire"
+    },
+    "achievements": []
+  },
+  {
+    "id": "3427B1E4-8AF0-4990-8797-A8719DB209DC",
+    "email": "toto@aisense.fr",
+    "lastName": "Toto",
+    "firstName": "Titi",
+    "photo": "anonymous-user.png",
+    "badge": {
+      "title": "Bambi"
+    },
+    "level": 2,
+    "experience": 10000
+  },
+  {
+    "id": "C3150E6D-5F52-4985-B89C-83E8EFCFECA9",
+    "email": "sdgdfgd@aisense.fr",
+    "lastName": "Toto",
+    "firstName": "Titi",
+    "photo": "anonymous-user.png",
+    "level": 12,
+    "experience": 10000
+  }
+
+]
