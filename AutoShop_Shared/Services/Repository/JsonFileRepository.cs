@@ -7,6 +7,11 @@ namespace AutoShop_Shared.Services
 {
     public class JsonFileRepository<T> : IRepository<T>
     {
+        public void DeleteItem(string id = "", string partitionKey = "")
+        {
+            throw new System.NotImplementedException();
+        }
+
         public T GetItem(string id, string partitionKey)
         {
             throw new System.NotImplementedException();
@@ -34,6 +39,16 @@ namespace AutoShop_Shared.Services
 
             //Retourner le résultat
             return items;
+        }
+
+        public T InsertItem(T item)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public T UpdateItem(T item)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
