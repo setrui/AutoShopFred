@@ -9,7 +9,12 @@ namespace AutoShop_Shared.Services
     {
         public List<T> GetItems(AppSettings settings);
 
-        public T GetItem(string id, string partitionKey); 
-        
+        public T GetItem(string id, string partitionKey);
+
+        public T InsertItem(T item);
+
+        public T UpdateItem(T item);
+
+        public void DeleteItem(string id="",string partitionKey="");
     }
 }

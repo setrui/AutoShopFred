@@ -21,8 +21,7 @@ namespace AutoShop_Shared.Models
 
         [JsonProperty("badge")]
         public Badge ActiveBadge { get; set; }
-
-
+        public string PartitionKey { get; internal set; }
     }
 
 }

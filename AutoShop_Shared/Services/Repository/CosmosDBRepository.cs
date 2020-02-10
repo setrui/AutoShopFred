@@ -52,5 +52,22 @@ namespace AutoShop_Shared.Services
                 _container.ReadItemAsync<T>(id, new PartitionKey(partitionKey)).GetAwaiter().GetResult();
             return response.Resource;
         }
+
+        public T InsertItem(T item)
+        {
+            ItemResponse<T> response = _container.UpsertItemAsync<T>(item).GetAwaiter().GetResult();
+            return response.Resource;
+
+        }
+
+        public T UpdateItem(T item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteItem(string id = "", string partitionKey = "")
+        {
+            throw new NotImplementedException();
+        }
     }
 }

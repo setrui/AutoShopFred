@@ -40,5 +40,11 @@ namespace AutoShop_Shared.Services
             return user;
         }
 
+        public User InsertUser(User item)
+        {
+            item.ID = Guid.NewGuid().ToString();
+            item.PartitionKey = item.ID;
+            return _repository.InsertItem(item);
+        }
     }
 }

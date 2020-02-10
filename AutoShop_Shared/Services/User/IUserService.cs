@@ -8,5 +8,8 @@ namespace AutoShop_Shared.Services
         public List<User> GetUsers();
 
         public User GetUser(string id="", string partitionKey="");
+
+        public User InsertUser(User user);
+
     }
 }
