@@ -46,5 +46,9 @@ namespace AutoShop_Shared.Services
             item.PartitionKey = item.ID;
             return _repository.InsertItem(item);
         }
+        public void DeleteUser(string id, string partitionKey)
+        {
+            _repository.DeleteItem(id, partitionKey);
+        }
     }
 }

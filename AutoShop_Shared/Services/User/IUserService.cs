@@ -11,5 +11,6 @@ namespace AutoShop_Shared.Services
 
         public User InsertUser(User user);
 
+        void DeleteUser(string id1, string partitionKey);
     }
 }

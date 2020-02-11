@@ -28,7 +28,7 @@ namespace AutoShop_Web.Controllers
             return View(users);
         }
 
-
+        [HttpGet]
         public ActionResult Detail(string id)
         {
             User user = _userService.GetUser(id, id);
@@ -37,6 +37,8 @@ namespace AutoShop_Web.Controllers
         }
 
         // GET: test/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(string id)
         {
             User user = _userService.GetUser(id, id);
@@ -46,16 +48,44 @@ namespace AutoShop_Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(string id, IFormCollection collection)
+        public ActionResult Edit(string id, User collection)
         {
             User user = null;
             if (ModelState.IsValid)
             {
                 user = _userService.GetUser(id,id);
-
+                return View(user);
             }
-            return View(user);
+            return View("Edit", collection);
+        }
 
+        public ActionResult Add()
+        {
+            return View("Add");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(User item)
+        {
+            if(ModelState.IsValid)
+            {
+                _userService.InsertUser(item);
+                return View("Detail", item);
+            }
+            return View("Add");
+        }
+
+        public ActionResult Delete(string id) 
+        {
+            if (ModelState.IsValid)
+            {
+                _userService.DeleteUser(id, id);
+                return RedirectToAction("Index");
+            }
+            //mesage d'erreure
+            return RedirectToAction("Index");
         }
     }
+       
 }

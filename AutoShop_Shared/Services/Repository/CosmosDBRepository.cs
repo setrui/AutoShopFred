@@ -62,12 +62,18 @@ namespace AutoShop_Shared.Services
 
         public T UpdateItem(T item)
         {
-            throw new NotImplementedException();
+            ItemResponse<T> response =
+                _container.UpsertItemAsync<T>(item).GetAwaiter().GetResult();
+            return response.Resource;
         }
 
         public void DeleteItem(string id = "", string partitionKey = "")
         {
-            throw new NotImplementedException();
+            if (! string.IsNullOrEmpty(partitionKey))
+            {
+                _container.DeleteItemAsync<T>(id, new PartitionKey(partitionKey))
+                    .GetAwaiter().GetResult();
+            }
         }
     }
 }

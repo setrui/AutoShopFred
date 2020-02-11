@@ -3,53 +3,56 @@
     const int maxLevel = 100;
     const int maxExperience = 400000;
 }
-<div class="card-deck">
+    <div class="card-deck">
 
-    @foreach (User item in Model)
-    {
-        int level = (item.Level * 100) / maxLevel;
-        uint exp = (item.Experience * 100) / maxExperience;
+        @foreach (User item in Model)
+        {
+            int level = (item.Level * 100) / maxLevel;
+            uint exp = (item.Experience * 100) / maxExperience;
 
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">@item.Email</div>
-            </div>
-            <div class="card-body">
-                <div class="card-img"><img class="w-25" src="~/images/@item.Photo" /></div>
-                <div class="card-title">
-                    <div>@item.LastName  @item.FirstName</div>
-                    @if (item.ActiveBadge != null)
-                    {
-                        <div >Alias : @item.ActiveBadge.Title</div>
-
-                    }
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">@item.Email</div>
                 </div>
-               
-                <div class="card-text">Niveau</div>
-                <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar"
-                         aria-valuenow="@item.Level" aria-valuemin="0"
-                         aria-valuemax="@maxLevel" style="width:@level%">@item.Level</div>
+                <div class="card-body">
+                    <div class="card-img"><img class="w-25" src="~/images/@item.Photo" /></div>
+                    <div class="card-title">
+                        <div>@item.LastName  @item.FirstName</div>
+                        @if (item.ActiveBadge != null)
+                        {
+                            <div>Alias : @item.ActiveBadge.Title</div>
+
+                        }
                     </div>
 
-                    <div class="card-text">Experience</div>
+                    <div class="card-text">Niveau</div>
                     <div class="progress">
-                        <div class="progress-bar bg-primary" role="progressbar"
-                             aria-valuenow="@item.Experience" aria-valuemin="0"
-                             aria-valuemax="@maxExperience" style="width:@exp%">
-                            @item.Experience.ToString("N0") / @maxExperience.ToString("N0")
+                        <div class="progress-bar bg-success" role="progressbar"
+                             aria-valuenow="@item.Level" aria-valuemin="0"
+                             aria-valuemax="@maxLevel" style="width:@level%">@item.Level</div>
                         </div>
+
+                        <div class="card-text">Experience</div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar"
+                                 aria-valuenow="@item.Experience" aria-valuemin="0"
+                                 aria-valuemax="@maxExperience" style="width:@exp%">
+                                @item.Experience.ToString("N0") / @maxExperience.ToString("N0")
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-secondary float-right" type="button">Upload</button>
+                        @Html.ActionLink("Detail", "Detail", new { id = item.ID }, new { @class = "btn btn-secondary float-right mr-2" })
+
                     </div>
 
+
                 </div>
-            <div class="card-footer">
-                <button class="btn btn-secondary float-right" type="button">Upload</button>
-                @Html.ActionLink("Detail", "Detail", new { id = item.ID },new { @class = "btn btn-secondary float-right mr-2" })
-            </div>
+            }
+        <button class="btn btn-secondary float-right" type="button">Upload</button>
+        @Html.ActionLink("Add", "Add", new { @class = "btn btn-secondary float-right mr-2" })
 
-            </div>
-        }
-
-
-</div>
+    </div>
 

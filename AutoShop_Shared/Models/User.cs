@@ -10,12 +10,14 @@ namespace AutoShop_Shared.Models
 
 
         [JsonProperty("email")]
-        [DataType(DataType.EmailAddress)]
-        [Required(AllowEmptyStrings =false,ErrorMessage ="L'email est obligatoire")]       
+        [Required(AllowEmptyStrings =false,ErrorMessage ="L'email est obligatoire")]  
+        [Display(Name = "Courriel", Prompt = "Saisir votre courriel")]
+        [EmailAddress(ErrorMessage = "Ce n'est pas une addresse mail")]
         public string Email { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Photo { get; set; }
+        [Range(1,100,ErrorMessage = "Le level doit être compris de 1 à 100")]
         public byte Level { get; set; }
         public uint Experience { get; set; }
 
